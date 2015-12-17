@@ -42,13 +42,13 @@
       <apex:commandButton action="{!Go}" value="   Go!   " id="go" styleClass="btnPrimary"
                                                                         rerender="GoResultsPageBlock"/>
       &nbsp;
-      <apex:commandLink action="{!Convert}" value="Convert Ids" id="convert" 
+      <apex:commandLink action="{!Convert}" value="Convert Ids" id="convert" rendered="{!NOT(isConvertLinkDisabled)}"
                                                                         rerender="GoResultsPageBlock"/>
       
       &nbsp;
-      <apex:outputLink disabled="{!isExportLinkDisabled}" value="/apex/exportELF" target="_blank">Export
+      <!-- <apex:outputLink disabled="{!isExportLinkDisabled}" value="/apex/exportELF" target="_blank">Export
           <apex:param name="id" value="{!plELF}"/>
-      </apex:outputLink>
+      </apex:outputLink> -->
    <apex:outputPanel id="GoResultsOutputPanel" >
     <table title="CSV Output" border="1" width="100%">
        <apex:repeat value="{!GoResults}" var="row"   >
